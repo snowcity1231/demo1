@@ -7,9 +7,11 @@
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-    <import resource="classpath:applicationContext-mq.xml"/>
+    <context:property-placeholder location="classpath:prop.properties"/>
+    <!--加载配置文件-->
+<!--    <context:property-placeholder location="classpath:redis.properties"/>-->
 
-    <context:property-placeholder location="classpath:mq.properties"/>
+    <import resource="classpath:applicationContext-*.xml"/>
 
     <context:component-scan base-package="com.xc"/>
 
